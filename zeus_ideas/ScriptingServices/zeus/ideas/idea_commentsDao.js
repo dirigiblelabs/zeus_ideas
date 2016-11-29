@@ -10,10 +10,10 @@ var user = require('net/http/user');
 exports.create = function(entity) {
     var connection = datasource.getConnection();
     try {
-        var sql = 'INSERT INTO CMC_IDEA_COMMENTS (IDEAC_ID,IDEAC_IDEA_ID,IDEAC_COMMENT,IDEAC_CREATED_AT,IDEAC_CREATED_BY) VALUES (?,?,?,?,?)';
+        var sql = 'INSERT INTO ZEUS_IDEA_COMMENTS (IDEAC_ID,IDEAC_IDEA_ID,IDEAC_COMMENT,IDEAC_CREATED_AT,IDEAC_CREATED_BY) VALUES (?,?,?,?,?)';
         var statement = connection.prepareStatement(sql);
         var i = 0;
-        var id = datasource.getSequence('CMC_IDEA_COMMENTS_IDEAC_ID').next();
+        var id = datasource.getSequence('ZEUS_IDEA_COMMENTS_IDEAC_ID').next();
         statement.setInt(++i, id);
         statement.setInt(++i, entity.ideac_idea_id);
         statement.setString(++i, entity.ideac_comment);
@@ -33,7 +33,7 @@ exports.get = function(id) {
 	var entity = null;
     var connection = datasource.getConnection();
     try {
-        var sql = 'SELECT * FROM CMC_IDEA_COMMENTS WHERE IDEAC_ID = ?';
+        var sql = 'SELECT * FROM ZEUS_IDEA_COMMENTS WHERE IDEAC_ID = ?';
         var statement = connection.prepareStatement(sql);
         statement.setInt(1, id);
 
@@ -59,7 +59,7 @@ exports.list = function(limit, offset, sort, desc, idea) {
         if (limit !== null && offset !== null) {
             sql += ' ' + datasource.getPaging().genTopAndStart(limit, offset);
         }
-        sql += ' * FROM CMC_IDEA_COMMENTS';
+        sql += ' * FROM ZEUS_IDEA_COMMENTS';
         sql += ' WHERE IDEAC_IDEA_ID=?';
         if (sort !== null) {
             sql += ' ORDER BY ' + sort;
@@ -86,7 +86,7 @@ exports.list = function(limit, offset, sort, desc, idea) {
 exports.update = function(entity) {
     var connection = datasource.getConnection();
     try {
-        var sql = 'UPDATE CMC_IDEA_COMMENTS SET IDEAC_IDEA_ID = ?,IDEAC_COMMENT = ?,IDEAC_CREATED_AT = ?,IDEAC_CREATED_BY = ? WHERE IDEAC_ID = ?';
+        var sql = 'UPDATE ZEUS_IDEA_COMMENTS SET IDEAC_IDEA_ID = ?,IDEAC_COMMENT = ?,IDEAC_CREATED_AT = ?,IDEAC_CREATED_BY = ? WHERE IDEAC_ID = ?';
         var statement = connection.prepareStatement(sql);
         var i = 0;
         statement.setInt(++i, entity.ideac_idea_id);
@@ -112,7 +112,7 @@ exports.update = function(entity) {
 exports.delete = function(entity) {
     var connection = datasource.getConnection();
     try {
-    	var sql = 'DELETE FROM CMC_IDEA_COMMENTS WHERE IDEAC_ID = ?';
+    	var sql = 'DELETE FROM ZEUS_IDEA_COMMENTS WHERE IDEAC_ID = ?';
         var statement = connection.prepareStatement(sql);
         statement.setString(1, entity.ideac_id);
         idea_commentsDaoExtensionsUtils.beforeDelete(connection, entity);
@@ -128,7 +128,7 @@ exports.count = function() {
     var count = 0;
     var connection = datasource.getConnection();
     try {
-    	var sql = 'SELECT COUNT(*) FROM CMC_IDEA_COMMENTS';
+    	var sql = 'SELECT COUNT(*) FROM ZEUS_IDEA_COMMENTS';
         var statement = connection.prepareStatement(sql);
         var rs = statement.executeQuery();
         if (rs.next()) {
@@ -143,7 +143,7 @@ exports.count = function() {
 // Returns the metadata for the entity
 exports.metadata = function() {
 	var metadata = {
-		name: 'cmc_idea_comments',
+		name: 'zeus_idea_comments',
 		type: 'object',
 		properties: [
 		{

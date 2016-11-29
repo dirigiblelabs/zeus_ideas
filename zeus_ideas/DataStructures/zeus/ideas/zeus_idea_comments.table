@@ -1,5 +1,5 @@
 {
-  "tableName":"cmc_idea_comments",
+  "tableName":"zeus_idea_comments",
   "columns":
     [
       {

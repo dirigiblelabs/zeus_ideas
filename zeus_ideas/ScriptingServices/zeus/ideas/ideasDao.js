@@ -10,10 +10,10 @@ var user = require('net/http/user');
 exports.create = function(entity) {
     var connection = datasource.getConnection();
     try {
-        var sql = 'INSERT INTO CMC_IDEAS (IDEA_ID,IDEA_NAME,IDEA_DESCRIPTION,IDEA_CREATED_AT,IDEA_CREATED_BY) VALUES (?,?,?,?,?)';
+        var sql = 'INSERT INTO ZEUS_IDEAS (IDEA_ID,IDEA_NAME,IDEA_DESCRIPTION,IDEA_CREATED_AT,IDEA_CREATED_BY) VALUES (?,?,?,?,?)';
         var statement = connection.prepareStatement(sql);
         var i = 0;
-        var id = datasource.getSequence('CMC_IDEAS_IDEA_ID').next();
+        var id = datasource.getSequence('ZEUS_IDEAS_IDEA_ID').next();
         statement.setInt(++i, id);
         statement.setString(++i, entity.idea_name);
         statement.setString(++i, entity.idea_description);
@@ -33,7 +33,7 @@ exports.get = function(id) {
 	var entity = null;
     var connection = datasource.getConnection();
     try {
-        var sql = 'SELECT * FROM CMC_IDEAS WHERE IDEA_ID = ?';
+        var sql = 'SELECT * FROM ZEUS_IDEAS WHERE IDEA_ID = ?';
         var statement = connection.prepareStatement(sql);
         statement.setInt(1, id);
 
@@ -56,7 +56,7 @@ exports.list = function(limit, offset, sort, desc) {
         if (limit !== null && offset !== null) {
             sql += ' ' + datasource.getPaging().genTopAndStart(limit, offset);
         }
-        sql += ' * FROM CMC_IDEAS';
+        sql += ' * FROM ZEUS_IDEAS';
         if (sort !== null) {
             sql += ' ORDER BY ' + sort;
         }
@@ -81,7 +81,7 @@ exports.list = function(limit, offset, sort, desc) {
 exports.update = function(entity) {
     var connection = datasource.getConnection();
     try {
-        var sql = 'UPDATE CMC_IDEAS SET IDEA_NAME = ?,IDEA_DESCRIPTION = ?,IDEA_CREATED_AT = ?,IDEA_CREATED_BY = ? WHERE IDEA_ID = ?';
+        var sql = 'UPDATE ZEUS_IDEAS SET IDEA_NAME = ?,IDEA_DESCRIPTION = ?,IDEA_CREATED_AT = ?,IDEA_CREATED_BY = ? WHERE IDEA_ID = ?';
         var statement = connection.prepareStatement(sql);
         var i = 0;
         statement.setString(++i, entity.idea_name);
@@ -107,7 +107,7 @@ exports.update = function(entity) {
 exports.delete = function(entity) {
     var connection = datasource.getConnection();
     try {
-    	var sql = 'DELETE FROM CMC_IDEAS WHERE IDEA_ID = ?';
+    	var sql = 'DELETE FROM ZEUS_IDEAS WHERE IDEA_ID = ?';
         var statement = connection.prepareStatement(sql);
         statement.setString(1, entity.idea_id);
         ideasDaoExtensionsUtils.beforeDelete(connection, entity);
@@ -123,7 +123,7 @@ exports.count = function() {
     var count = 0;
     var connection = datasource.getConnection();
     try {
-    	var sql = 'SELECT COUNT(*) FROM CMC_IDEAS';
+    	var sql = 'SELECT COUNT(*) FROM ZEUS_IDEAS';
         var statement = connection.prepareStatement(sql);
         var rs = statement.executeQuery();
         if (rs.next()) {
@@ -138,7 +138,7 @@ exports.count = function() {
 // Returns the metadata for the entity
 exports.metadata = function() {
 	var metadata = {
-		name: 'cmc_ideas',
+		name: 'zeus_ideas',
 		type: 'object',
 		properties: [
 		{
