@@ -1,0 +1,15 @@
+{
+  "entityName":"Cmc_idea_comments",
+  "tableName":"CMC_IDEA_COMMENTS",
+  "tableType":"TABLE",
+  "serviceName":"idea_comments.js",
+  "libraryName":"idea_comments_lib.js",
+  "specification":"idea_comments.swagger",
+  "getEnabled":"true",
+  "postEnabled":"true",
+  "putEnabled":"true",
+  "deleteEnabled":"true",
+  "countEnabled":"true",
+  "offsetAndLimitEnabled":"true",
+  "metadataEnabled":"true"
+}

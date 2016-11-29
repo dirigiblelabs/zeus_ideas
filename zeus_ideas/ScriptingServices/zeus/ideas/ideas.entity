@@ -1,0 +1,15 @@
+{
+  "entityName":"Cmc_ideas",
+  "tableName":"CMC_IDEAS",
+  "tableType":"TABLE",
+  "serviceName":"ideas.js",
+  "libraryName":"ideas_lib.js",
+  "specification":"ideas.swagger",
+  "getEnabled":"true",
+  "postEnabled":"true",
+  "putEnabled":"true",
+  "deleteEnabled":"true",
+  "countEnabled":"true",
+  "offsetAndLimitEnabled":"true",
+  "metadataEnabled":"true"
+}

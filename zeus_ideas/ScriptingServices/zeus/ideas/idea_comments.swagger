@@ -1,0 +1,204 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "0.0.0",
+        "title": "Cmc_idea_comments Entity Service",
+        "description":"This is a RESTful web service for listing, viewing and managing entities of the type 'Cmc_idea_comments'"
+    },
+    "basePath":"/services",
+    "tags":[
+      {
+         "name":"Cmc_idea_comments",
+         "description":"View and manage Cmc_idea_comments objects"
+      }
+    ],
+    "paths": {
+        "/js/zeus/ideas/idea_comments.js": {
+            "get": {
+            	"tags":[
+               		"Cmc_idea_comments"
+            	],
+                "description": "Gets 'Cmc_idea_comments' objects.\n",
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "description": "Count of all the records",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "ideac_id",
+                        "in": "query",
+                        "description": "Identifier of the 'Cmc_idea_comments' object",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "metadata",
+                        "in": "query",
+                        "description": "Metadata of the 'Cmc_idea_comments' object",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit of the objects list",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset of the objects list",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort parameter",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "desc",
+                        "in": "query",
+                        "description": "Descending order",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema":{
+		                     "$ref":"#/definitions/Cmc_idea_comments"
+                        }
+                    }
+                }
+            },
+            "post": {
+            	"tags":[
+               		"Cmc_idea_comments"
+            	],
+                "description": "Creates a new 'Cmc_idea_comments' object.\n",
+                "consumes":[
+	               "application/json"
+	            ],
+	            "produces":[
+	               "plain/text"
+	            ],
+	            "parameters":[
+	               {
+	                  "in":"body",
+	                  "name":"body",
+	                  "description":"Cmc_idea_comments object that needs to be added",
+	                  "required":true,
+	                  "schema":{
+	                     "$ref":"#/definitions/Cmc_idea_comments"
+	                  }
+	               }
+	            ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema":{
+		                     "$ref":"#/definitions/Cmc_idea_comments"
+                        }
+                    }
+                }
+            },
+            "put": {
+            	"tags":[
+               		"Cmc_idea_comments"
+            	],
+                "description": "Updates an existing 'Cmc_idea_comments' object.\n",
+                "consumes":[
+	               "application/json"
+	            ],
+	            "produces":[
+	               "plain/text"
+	            ],
+	            "parameters":[
+	               {
+	                  "in":"body",
+	                  "name":"body",
+	                  "description":"Cmc_idea_comments object that needs to be added",
+	                  "required":true,
+	                  "schema":{
+	                     "$ref":"#/definitions/Cmc_idea_comments"
+	                  }
+	               }
+	            ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema":{
+		                     "$ref":"#/definitions/Cmc_idea_comments"
+                        }
+                    }
+                }
+            },
+            "delete": {
+            	"tags":[
+               		"Cmc_idea_comments"
+            	],
+                "description": "Deletes 'Cmc_idea_comments' objects.\n",
+                "parameters": [
+                    {
+                        "name": "ideac_id",
+                        "in": "query",
+                        "description": "Identifier of the 'Cmc_idea_comments' object",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema":{
+		                     "$ref":"#/definitions/Cmc_idea_comments"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions":{
+        "Cmc_idea_comments": {
+	        "type":"object",
+	        "properties": {
+        		"ideac_id": {
+	            	"type": 
+        "integer"
+	    		}
+				,
+        		"ideac_idea_id": {
+	            	"type": 
+        "integer"
+	    		}
+				,
+        		"ideac_comment": {
+	            	"type": 
+        "string"
+	    		}
+				,
+        		"ideac_created_at": {
+	            	"type": 
+        "number"
+	    		}
+				,
+        		"ideac_created_by": {
+	            	"type": 
+        "string"
+	    		}
+	        }
+        }
+	}
+}

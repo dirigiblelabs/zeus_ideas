@@ -1,0 +1,204 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "0.0.0",
+        "title": "Cmc_ideas Entity Service",
+        "description":"This is a RESTful web service for listing, viewing and managing entities of the type 'Cmc_ideas'"
+    },
+    "basePath":"/services",
+    "tags":[
+      {
+         "name":"Cmc_ideas",
+         "description":"View and manage Cmc_ideas objects"
+      }
+    ],
+    "paths": {
+        "/js/zeus/ideas/ideas.js": {
+            "get": {
+            	"tags":[
+               		"Cmc_ideas"
+            	],
+                "description": "Gets 'Cmc_ideas' objects.\n",
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "description": "Count of all the records",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "idea_id",
+                        "in": "query",
+                        "description": "Identifier of the 'Cmc_ideas' object",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "metadata",
+                        "in": "query",
+                        "description": "Metadata of the 'Cmc_ideas' object",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit of the objects list",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset of the objects list",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort parameter",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "desc",
+                        "in": "query",
+                        "description": "Descending order",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema":{
+		                     "$ref":"#/definitions/Cmc_ideas"
+                        }
+                    }
+                }
+            },
+            "post": {
+            	"tags":[
+               		"Cmc_ideas"
+            	],
+                "description": "Creates a new 'Cmc_ideas' object.\n",
+                "consumes":[
+	               "application/json"
+	            ],
+	            "produces":[
+	               "plain/text"
+	            ],
+	            "parameters":[
+	               {
+	                  "in":"body",
+	                  "name":"body",
+	                  "description":"Cmc_ideas object that needs to be added",
+	                  "required":true,
+	                  "schema":{
+	                     "$ref":"#/definitions/Cmc_ideas"
+	                  }
+	               }
+	            ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema":{
+		                     "$ref":"#/definitions/Cmc_ideas"
+                        }
+                    }
+                }
+            },
+            "put": {
+            	"tags":[
+               		"Cmc_ideas"
+            	],
+                "description": "Updates an existing 'Cmc_ideas' object.\n",
+                "consumes":[
+	               "application/json"
+	            ],
+	            "produces":[
+	               "plain/text"
+	            ],
+	            "parameters":[
+	               {
+	                  "in":"body",
+	                  "name":"body",
+	                  "description":"Cmc_ideas object that needs to be added",
+	                  "required":true,
+	                  "schema":{
+	                     "$ref":"#/definitions/Cmc_ideas"
+	                  }
+	               }
+	            ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema":{
+		                     "$ref":"#/definitions/Cmc_ideas"
+                        }
+                    }
+                }
+            },
+            "delete": {
+            	"tags":[
+               		"Cmc_ideas"
+            	],
+                "description": "Deletes 'Cmc_ideas' objects.\n",
+                "parameters": [
+                    {
+                        "name": "idea_id",
+                        "in": "query",
+                        "description": "Identifier of the 'Cmc_ideas' object",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema":{
+		                     "$ref":"#/definitions/Cmc_ideas"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions":{
+        "Cmc_ideas": {
+	        "type":"object",
+	        "properties": {
+        		"idea_id": {
+	            	"type": 
+        "integer"
+	    		}
+				,
+        		"idea_name": {
+	            	"type": 
+        "string"
+	    		}
+				,
+        		"idea_description": {
+	            	"type": 
+        "string"
+	    		}
+				,
+        		"idea_created_at": {
+	            	"type": 
+        "number"
+	    		}
+				,
+        		"idea_created_by": {
+	            	"type": 
+        "string"
+	    		}
+	        }
+        }
+	}
+}
