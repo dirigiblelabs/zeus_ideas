@@ -2,23 +2,23 @@
     "swagger": "2.0",
     "info": {
         "version": "0.0.0",
-        "title": "Cmc_idea_comments Entity Service",
-        "description":"This is a RESTful web service for listing, viewing and managing entities of the type 'Cmc_idea_comments'"
+        "title": "Zeus_idea_comments Entity Service",
+        "description":"This is a RESTful web service for listing, viewing and managing entities of the type 'Zeus_idea_comments'"
     },
     "basePath":"/services",
     "tags":[
       {
-         "name":"Cmc_idea_comments",
-         "description":"View and manage Cmc_idea_comments objects"
+         "name":"Zeus_idea_comments",
+         "description":"View and manage Zeus_idea_comments objects"
       }
     ],
     "paths": {
         "/js/zeus/ideas/idea_comments.js": {
             "get": {
             	"tags":[
-               		"Cmc_idea_comments"
+               		"Zeus_idea_comments"
             	],
-                "description": "Gets 'Cmc_idea_comments' objects.\n",
+                "description": "Gets 'Zeus_idea_comments' objects.\n",
                 "parameters": [
                     {
                         "name": "count",
@@ -30,7 +30,7 @@
                     {
                         "name": "ideac_id",
                         "in": "query",
-                        "description": "Identifier of the 'Cmc_idea_comments' object",
+                        "description": "Identifier of the 'Zeus_idea_comments' object",
                         "required": false,
                         "type": "integer",
                         "format": "int32"
@@ -38,7 +38,7 @@
                     {
                         "name": "metadata",
                         "in": "query",
-                        "description": "Metadata of the 'Cmc_idea_comments' object",
+                        "description": "Metadata of the 'Zeus_idea_comments' object",
                         "required": false,
                         "type": "boolean"
                     },
@@ -77,16 +77,16 @@
                     "200": {
                         "description": "Successful response",
                         "schema":{
-		                     "$ref":"#/definitions/Cmc_idea_comments"
+		                     "$ref":"#/definitions/Zeus_idea_comments"
                         }
                     }
                 }
             },
             "post": {
             	"tags":[
-               		"Cmc_idea_comments"
+               		"Zeus_idea_comments"
             	],
-                "description": "Creates a new 'Cmc_idea_comments' object.\n",
+                "description": "Creates a new 'Zeus_idea_comments' object.\n",
                 "consumes":[
 	               "application/json"
 	            ],
@@ -97,10 +97,10 @@
 	               {
 	                  "in":"body",
 	                  "name":"body",
-	                  "description":"Cmc_idea_comments object that needs to be added",
+	                  "description":"Zeus_idea_comments object that needs to be added",
 	                  "required":true,
 	                  "schema":{
-	                     "$ref":"#/definitions/Cmc_idea_comments"
+	                     "$ref":"#/definitions/Zeus_idea_comments"
 	                  }
 	               }
 	            ],
@@ -108,16 +108,16 @@
                     "200": {
                         "description": "Successful response",
                         "schema":{
-		                     "$ref":"#/definitions/Cmc_idea_comments"
+		                     "$ref":"#/definitions/Zeus_idea_comments"
                         }
                     }
                 }
             },
             "put": {
             	"tags":[
-               		"Cmc_idea_comments"
+               		"Zeus_idea_comments"
             	],
-                "description": "Updates an existing 'Cmc_idea_comments' object.\n",
+                "description": "Updates an existing 'Zeus_idea_comments' object.\n",
                 "consumes":[
 	               "application/json"
 	            ],
@@ -128,10 +128,10 @@
 	               {
 	                  "in":"body",
 	                  "name":"body",
-	                  "description":"Cmc_idea_comments object that needs to be added",
+	                  "description":"Zeus_idea_comments object that needs to be added",
 	                  "required":true,
 	                  "schema":{
-	                     "$ref":"#/definitions/Cmc_idea_comments"
+	                     "$ref":"#/definitions/Zeus_idea_comments"
 	                  }
 	               }
 	            ],
@@ -139,21 +139,21 @@
                     "200": {
                         "description": "Successful response",
                         "schema":{
-		                     "$ref":"#/definitions/Cmc_idea_comments"
+		                     "$ref":"#/definitions/Zeus_idea_comments"
                         }
                     }
                 }
             },
             "delete": {
             	"tags":[
-               		"Cmc_idea_comments"
+               		"Zeus_idea_comments"
             	],
-                "description": "Deletes 'Cmc_idea_comments' objects.\n",
+                "description": "Deletes 'Zeus_idea_comments' objects.\n",
                 "parameters": [
                     {
                         "name": "ideac_id",
                         "in": "query",
-                        "description": "Identifier of the 'Cmc_idea_comments' object",
+                        "description": "Identifier of the 'Zeus_idea_comments' object",
                         "required": true,
                         "type": "integer",
                         "format": "int64"
@@ -163,7 +163,7 @@
                     "200": {
                         "description": "Successful response",
                         "schema":{
-		                     "$ref":"#/definitions/Cmc_idea_comments"
+		                     "$ref":"#/definitions/Zeus_idea_comments"
                         }
                     }
                 }
@@ -171,7 +171,7 @@
         }
     },
     "definitions":{
-        "Cmc_idea_comments": {
+        "Zeus_idea_comments": {
 	        "type":"object",
 	        "properties": {
         		"ideac_id": {

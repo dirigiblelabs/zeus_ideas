@@ -2,23 +2,23 @@
     "swagger": "2.0",
     "info": {
         "version": "0.0.0",
-        "title": "Cmc_ideas Entity Service",
-        "description":"This is a RESTful web service for listing, viewing and managing entities of the type 'Cmc_ideas'"
+        "title": "Zeus_ideas Entity Service",
+        "description":"This is a RESTful web service for listing, viewing and managing entities of the type 'Zeus_ideas'"
     },
     "basePath":"/services",
     "tags":[
       {
-         "name":"Cmc_ideas",
-         "description":"View and manage Cmc_ideas objects"
+         "name":"Zeus_ideas",
+         "description":"View and manage Zeus_ideas objects"
       }
     ],
     "paths": {
         "/js/zeus/ideas/ideas.js": {
             "get": {
             	"tags":[
-               		"Cmc_ideas"
+               		"Zeus_ideas"
             	],
-                "description": "Gets 'Cmc_ideas' objects.\n",
+                "description": "Gets 'Zeus_ideas' objects.\n",
                 "parameters": [
                     {
                         "name": "count",
@@ -30,7 +30,7 @@
                     {
                         "name": "idea_id",
                         "in": "query",
-                        "description": "Identifier of the 'Cmc_ideas' object",
+                        "description": "Identifier of the 'Zeus_ideas' object",
                         "required": false,
                         "type": "integer",
                         "format": "int32"
@@ -38,7 +38,7 @@
                     {
                         "name": "metadata",
                         "in": "query",
-                        "description": "Metadata of the 'Cmc_ideas' object",
+                        "description": "Metadata of the 'Zeus_ideas' object",
                         "required": false,
                         "type": "boolean"
                     },
@@ -77,16 +77,16 @@
                     "200": {
                         "description": "Successful response",
                         "schema":{
-		                     "$ref":"#/definitions/Cmc_ideas"
+		                     "$ref":"#/definitions/Zeus_ideas"
                         }
                     }
                 }
             },
             "post": {
             	"tags":[
-               		"Cmc_ideas"
+               		"Zeus_ideas"
             	],
-                "description": "Creates a new 'Cmc_ideas' object.\n",
+                "description": "Creates a new 'Zeus_ideas' object.\n",
                 "consumes":[
 	               "application/json"
 	            ],
@@ -97,10 +97,10 @@
 	               {
 	                  "in":"body",
 	                  "name":"body",
-	                  "description":"Cmc_ideas object that needs to be added",
+	                  "description":"Zeus_ideas object that needs to be added",
 	                  "required":true,
 	                  "schema":{
-	                     "$ref":"#/definitions/Cmc_ideas"
+	                     "$ref":"#/definitions/Zeus_ideas"
 	                  }
 	               }
 	            ],
@@ -108,16 +108,16 @@
                     "200": {
                         "description": "Successful response",
                         "schema":{
-		                     "$ref":"#/definitions/Cmc_ideas"
+		                     "$ref":"#/definitions/Zeus_ideas"
                         }
                     }
                 }
             },
             "put": {
             	"tags":[
-               		"Cmc_ideas"
+               		"Zeus_ideas"
             	],
-                "description": "Updates an existing 'Cmc_ideas' object.\n",
+                "description": "Updates an existing 'Zeus_ideas' object.\n",
                 "consumes":[
 	               "application/json"
 	            ],
@@ -128,10 +128,10 @@
 	               {
 	                  "in":"body",
 	                  "name":"body",
-	                  "description":"Cmc_ideas object that needs to be added",
+	                  "description":"Zeus_ideas object that needs to be added",
 	                  "required":true,
 	                  "schema":{
-	                     "$ref":"#/definitions/Cmc_ideas"
+	                     "$ref":"#/definitions/Zeus_ideas"
 	                  }
 	               }
 	            ],
@@ -139,21 +139,21 @@
                     "200": {
                         "description": "Successful response",
                         "schema":{
-		                     "$ref":"#/definitions/Cmc_ideas"
+		                     "$ref":"#/definitions/Zeus_ideas"
                         }
                     }
                 }
             },
             "delete": {
             	"tags":[
-               		"Cmc_ideas"
+               		"Zeus_ideas"
             	],
-                "description": "Deletes 'Cmc_ideas' objects.\n",
+                "description": "Deletes 'Zeus_ideas' objects.\n",
                 "parameters": [
                     {
                         "name": "idea_id",
                         "in": "query",
-                        "description": "Identifier of the 'Cmc_ideas' object",
+                        "description": "Identifier of the 'Zeus_ideas' object",
                         "required": true,
                         "type": "integer",
                         "format": "int64"
@@ -163,7 +163,7 @@
                     "200": {
                         "description": "Successful response",
                         "schema":{
-		                     "$ref":"#/definitions/Cmc_ideas"
+		                     "$ref":"#/definitions/Zeus_ideas"
                         }
                     }
                 }
@@ -171,7 +171,7 @@
         }
     },
     "definitions":{
-        "Cmc_ideas": {
+        "Zeus_ideas": {
 	        "type":"object",
 	        "properties": {
         		"idea_id": {

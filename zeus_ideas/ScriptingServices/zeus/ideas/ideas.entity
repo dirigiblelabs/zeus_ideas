@@ -1,6 +1,6 @@
 {
-  "entityName":"Cmc_ideas",
-  "tableName":"CMC_IDEAS",
+  "entityName":"Zeus_ideas",
+  "tableName":"ZEUS_IDEAS",
   "tableType":"TABLE",
   "serviceName":"ideas.js",
   "libraryName":"ideas_lib.js",
