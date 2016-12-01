@@ -81,18 +81,11 @@ exports.list = function(limit, offset, sort, desc) {
 exports.update = function(entity) {
     var connection = datasource.getConnection();
     try {
-        var sql = 'UPDATE ZEUS_IDEAS SET IDEA_NAME = ?,IDEA_DESCRIPTION = ?,IDEA_CREATED_AT = ?,IDEA_CREATED_BY = ? WHERE IDEA_ID = ?';
+        var sql = 'UPDATE ZEUS_IDEAS SET IDEA_NAME = ?,IDEA_DESCRIPTION = ? WHERE IDEA_ID = ?';
         var statement = connection.prepareStatement(sql);
         var i = 0;
         statement.setString(++i, entity.idea_name);
         statement.setString(++i, entity.idea_description);
-        if (entity.idea_created_at !== null) {
-            var js_date_idea_created_at =  new Date(Date.parse(entity.idea_created_at));
-            statement.setTimestamp(++i, js_date_idea_created_at);
-        } else {
-            statement.setTimestamp(++i, null);
-        }
-        statement.setString(++i, entity.idea_created_by);
         var id = entity.idea_id;
         statement.setInt(++i, id);
 		ideasDaoExtensionsUtils.beforeUpdate(connection, entity);

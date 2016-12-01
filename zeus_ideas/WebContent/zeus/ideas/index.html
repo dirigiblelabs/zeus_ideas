@@ -42,7 +42,7 @@
 		</div>
 		<div class="container">
 			<div class="alert alert-danger" ng-show="errorMessage">{{errorMessage}}</div>
-			
+			<div class="alert alert-success alert-dismissible" ng-show="successMessage">{{successMessage}}</div>
 			<div class="selected-{{entry._selected_}}" ng-repeat="entry in data"
 						ng-click="showInfoForEntry(entry)">
 				<div>
@@ -71,6 +71,12 @@
 					class="btn btn-default btn-sm" type="button" value="Delete"
 					ng-click="delete()"
 					ng-disabled="errorMessage || operation == 'new' || operation == 'update'">
+			</div>
+			<div class="btn-group">
+				<input
+					class="btn btn-primary btn-sm" type="button" value="Generate Solution"
+					ng-click="generateSolution()"
+					ng-disabled="!selectedEntry">
 			</div>
 			<br>
 			<div>
@@ -177,6 +183,7 @@
 			var url = '../../../js/zeus/ideas/ideas.js';
 			var urlDetailBase = '../../../js/zeus/ideas/idea_comments.js';
 			var urlDetail = urlDetailBase + '?idea=-1';
+			var urlSolution = '../../../js/zeus/solutions/solutions.js';
 
 			$http.get(url)
 				.success(function(data){
@@ -407,7 +414,19 @@
   			$scope.format = $scope.formats[0];
 
 			
-			
+			$scope.generateSolution = function() {
+				var solution = {};
+				solution.sol_name = $scope.selectedEntry.idea_name;
+				solution.sol_description = $scope.selectedEntry.idea_description;
+				solution.sol_date = new Date();
+				$http.post(urlSolution, solution)
+				.success(function(){
+                    $scope.successMessage = "Solution has beeen generated successfuly.";
+				})
+				.error(function(response){
+					$scope.errorMessage = response.err.message;
+				});
+			}
 			
 			
 			
