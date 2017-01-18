@@ -1,9 +1,9 @@
 {
-  "tableName":"zeus_idea_comments",
+  "tableName":"ZEUS_BOARD_VOTE",
   "columns":
     [
       {
-        "name":"IDEAC_ID",
+        "name":"ZEUSV_ID",
         "type":"INTEGER",
         "length":"0",
         "notNull":"true",
@@ -12,7 +12,7 @@
       }
       ,
       {
-        "name":"IDEAC_IDEA_ID",
+        "name":"ZEUSV_ZEUSB_ID",
         "type":"INTEGER",
         "length":"0",
         "notNull":"true",
@@ -21,27 +21,18 @@
       }
       ,
       {
-        "name":"IDEAC_COMMENT",
+        "name":"ZEUSV_USER",
         "type":"VARCHAR",
-        "length":"2000",
+        "length":"100",
         "notNull":"true",
         "primaryKey":"false",
         "defaultValue":""
       }
       ,
       {
-        "name":"IDEAC_CREATED_AT",
-        "type":"TIMESTAMP",
+        "name":"ZEUSV_VOTE",
+        "type":"SMALLINT",
         "length":"0",
-        "notNull":"true",
-        "primaryKey":"false",
-        "defaultValue":""
-      }
-      ,
-      {
-        "name":"IDEAC_CREATED_BY",
-        "type":"VARCHAR",
-        "length":"64",
         "notNull":"true",
         "primaryKey":"false",
         "defaultValue":""

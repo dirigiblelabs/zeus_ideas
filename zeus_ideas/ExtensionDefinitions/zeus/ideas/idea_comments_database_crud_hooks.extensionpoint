@@ -1,4 +1,0 @@
-{
-  "extension-point":"/zeus/ideas/idea_comments_database_crud_hooks",
-  "description":"Database CRUD hooks for the '/ScriptingServices/zeus/ideas/idea_comments.js' service, managing the 'CMC_IDEA_COMMENTS' table"
-}
