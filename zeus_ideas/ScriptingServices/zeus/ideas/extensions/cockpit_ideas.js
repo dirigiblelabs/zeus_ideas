@@ -2,7 +2,7 @@
 /* eslint-env node, dirigible */
 
 const PATH = "/ideas";
-const HTML_LINK = "../zeus_ideas/index.html";
+const HTML_LINK = "../../zeus_ideas/index.html";
 
 //exports.getMenuItem = function() {
 //	return {  
