@@ -1,0 +1,22 @@
+[
+  {
+    "location":"/zeus_ideas/svc/user",
+    "roles":
+      [
+        {"role":"Everyone"}
+      ]
+  },{
+    "location":"/zeus_ideas/login",
+    "roles":
+      [
+        {"role":"Everyone"}
+      ]
+  },{
+    "location":"/zeus_ideas/index.html#/login",
+    "roles":
+      [
+        {"role":"Everyone"}
+      ]
+  }
+]
+

@@ -1,0 +1,32 @@
+{
+  "tableName":"ZEUS_IDEAS_BOARD_TAG",
+  "columns":
+    [
+      {
+        "name":"ZEUS_IDEASBT_ID",
+        "type":"BIGINT",
+        "length":"0",
+        "notNull":"true",
+        "primaryKey":"true",
+        "defaultValue":""
+      }
+      ,
+      {
+        "name":"ZEUS_IDEASBT_ZEUS_IDEASB_ID",
+        "type":"BIGINT",
+        "length":"0",
+        "notNull":"true",
+        "primaryKey":"false",
+        "defaultValue":""
+      }
+      ,
+      {
+        "name":"ZEUS_IDEASBT_ANN_ID",
+        "type":"BIGINT",
+        "length":"0",
+        "notNull":"true",
+        "primaryKey":"false",
+        "defaultValue":""
+      }
+    ]
+}
