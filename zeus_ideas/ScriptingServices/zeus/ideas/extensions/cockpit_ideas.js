@@ -16,6 +16,8 @@ exports.getSidebarItem = function() {
 	return {  
       "name": "Ideas",
       "path": PATH,
-      "link": HTML_LINK
+      "link": HTML_LINK,
+      "category": "Define",
+      "order": 101
    };
 };
