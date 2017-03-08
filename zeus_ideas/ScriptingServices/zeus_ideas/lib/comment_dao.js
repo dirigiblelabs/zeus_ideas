@@ -21,11 +21,11 @@ var CommentsORM = {
 			name: "replyToCommentId",
 			dbName: "ZEUS_IDEASC_REPLY_TO_ZEUS_IDEASC_ID",
 			type: "Long",
-			dbValue: function(name, entity){
-				return entity.replyToCommentId !==undefined ? entity.replyToCommentId : null;//TODO: Fixme as soon as all -1 entries are updated to null. Will work with null isntead of -1
+			dbValue: function(replyToCommentId){
+				return replyToCommentId !==undefined ? replyToCommentId : null;
 			},
 			value: function(dbValue){
-				return dbValue === null || dbValue<1 ? undefined : dbValue;//TODO: Fixme as soon as all -1 entries are updated to null. Will work with null isntead of -1
+				return dbValue === null ? undefined : dbValue;
 			},
 		},{
 			name: "text",
@@ -37,8 +37,8 @@ var CommentsORM = {
 			dbName: "ZEUS_IDEASC_PUBLISH_TIME",
 			required: true,
 			type: "Long",
-			dbValue: function(name, entity){
-				return entity.publishTime !== undefined ? new Date(entity.publishTime).getTime() : null;
+			dbValue: function(publishTime){
+				return publishTime !== undefined ? new Date(publishTime).getTime() : Date.now();
 			},
 			value: function(dbValue){
 				return dbValue !== null ? new Date(dbValue).toISOString() : undefined;
@@ -48,8 +48,8 @@ var CommentsORM = {
 			name: "lastModifiedTime",
 			dbName: "ZEUS_IDEASC_LASTMODIFIED_TIME",
 			type: "Long",
-			dbValue: function(name, entity){
-				return entity.lastModifiedTime !== undefined ? new Date(entity.lastModifiedTime).getTime() : null;
+			dbValue: function(lastModifiedTime){
+				return lastModifiedTime !== undefined ? new Date(lastModifiedTime).getTime() : null;
 			},
 			value: function(dbValue){
 				return dbValue !== null ? new Date(dbValue).toISOString() : undefined;
@@ -59,25 +59,24 @@ var CommentsORM = {
 			dbName: "ZEUS_IDEASC_USER",
 			type: "String",
 			size: 100,
-			dbValue: function(name, entity){
+			dbValue: function(user){
 				return require("net/http/user").getName();
 			}
 		}	
 	],
-	associationSets: {
-		replies: {
+	associations: [{
+			name: 'replies',
 			joinKey: "replyToCommentId",
-			associationType: 'one-to-many',
+			type: 'one-to-many',
 			defaults: {
 				flat:true
 			}
-		},
-		board: {
-			dao: require("zeus_ideas/lib/board_dao").get,
-			associationType: 'many-to-one',
+		}, {
+			name: 'board',
+			targetDao: require("zeus_ideas/lib/board_dao").get,
+			type: 'many-to-one',
 			joinKey: "boardId"
-		}
-	}
+		}]
 };
 
 var DAO = require('daoism/dao').DAO;
